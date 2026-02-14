@@ -149,8 +149,8 @@ export default function ActivityCalendar({ expenses }: { expenses: any[] }) {
             </CardHeader>
             <CardContent className="p-4 md:p-8">
                 <div className="grid grid-cols-7 gap-px mb-4 opacity-50">
-                    {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map(d => (
-                        <div key={d} className="text-[10px] font-black text-center text-slate-400 py-2 uppercase tracking-widest">
+                    {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((d, i) => (
+                        <div key={`${d}-${i}`} className="text-[10px] font-black text-center text-slate-400 py-2 uppercase tracking-widest">
                             {d}
                         </div>
                     ))}
@@ -221,6 +221,7 @@ export default function ActivityCalendar({ expenses }: { expenses: any[] }) {
                                                 </div>
                                             </div>
                                         </DialogTitle>
+                                        <p className="sr-only">Detailed breakdown of financial activities for this date.</p>
                                     </DialogHeader>
                                     <div className="p-6 max-h-[60vh] overflow-y-auto space-y-4 bg-white no-scrollbar">
                                         {(!stats || stats.items.length === 0) ? (
@@ -266,6 +267,6 @@ export default function ActivityCalendar({ expenses }: { expenses: any[] }) {
                     })}
                 </div>
             </CardContent>
-        </Card>
+        </Card >
     );
 }
