@@ -39,3 +39,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local test scripts
+quick-test.mjs
+verify-native.mjs
+test-*.mjs
+check-models.mjs
+verify-*.mjs
+verify-*.js
+diagnose-*.js
+debug-*.js
+list-models.mjs
